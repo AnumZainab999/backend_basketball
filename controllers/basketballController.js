@@ -45,18 +45,22 @@ async function fetchMatches(prompt) {
 
 // --- Prompts ---
 const prompts = {
-  past: "Give last 5 Basketball matches in JSON array with: match_name, date, winner, country, flag (ISO code).",
-  upcoming: "Give next 5 Basketball matches in JSON array with: match_name, date, time, country, flag (ISO code).",
+  // Current month matches
+  past: "Give all Basketball matches that already happened in the current month in JSON array with: match_name, date, winner, country, flag (ISO code).",
+  upcoming: "Give all Basketball matches that will happen in the current month in JSON array with: match_name, date, time, country, flag (ISO code).",
   live: "Give 3 current live Basketball matches in JSON array with: match_name, quarter, leader, country, flag (ISO code), status.",
 
-  pastInternational: "Give last 5 International Basketball matches in JSON array with: match_name, date, winner, country, flag (ISO code).",
-  upcomingInternational: "Give next 5 International Basketball matches in JSON array with: match_name, date, time, country, flag (ISO code).",
+  // International
+  pastInternational: "Give all International Basketball matches that already happened in the current month in JSON array with: match_name, date, winner, country, flag (ISO code).",
+  upcomingInternational: "Give all International Basketball matches that will happen in the current month in JSON array with: match_name, date, time, country, flag (ISO code).",
   liveInternational: "Give 3 current live International Basketball matches in JSON array with: match_name, quarter, leader, country, flag (ISO code), status.",
 
-  pastLeague: "Give last 5 League Basketball matches in JSON array with: match_name, date, winner, country, flag (ISO code).",
-  upcomingLeague: "Give next 5 League Basketball matches in JSON array with: match_name, date, time, country, flag (ISO code).",
+  // League
+  pastLeague: "Give all League Basketball matches that already happened in the current month in JSON array with: match_name, date, winner, country, flag (ISO code).",
+  upcomingLeague: "Give all League Basketball matches that will happen in the current month in JSON array with: match_name, date, time, country, flag (ISO code).",
   liveLeague: "Give 3 current live League Basketball matches in JSON array with: match_name, quarter, leader, country, flag (ISO code), status.",
 };
+
 
 // --- Generic Controller Factory ---
 function createMatchController(promptKey) {
